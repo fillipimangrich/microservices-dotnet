@@ -11,7 +11,7 @@ using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-var connectionString = builder.Configuration.GetConnectionString("MySQLConnection:MySQLConnectionString");
+var connectionString = builder.Configuration.GetConnectionString("Default");
 
 builder.Services.AddDbContext<MySQLContext>(options => options.UseMySql(connectionString, new MySqlServerVersion(new Version(8, 1, 0))));
 
